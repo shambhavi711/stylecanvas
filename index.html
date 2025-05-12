@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Look Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Fashion Look Creator</div>
+        <nav class="nav">
+            <button class="nav-btn active" data-section="create">Create Look</button>
+            <button class="nav-btn" data-section="saved">My Looks</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Create Look Section -->
+        <section id="create" class="section active">
+            <div class="look-creator">
+                <div class="preview-canvas">
+                    <div class="outfit-preview">
+                        <div class="outfit-part top" id="top"></div>
+                        <div class="outfit-part bottom" id="bottom"></div>
+                        <div class="outfit-part shoes" id="shoes"></div>
+                        <div class="outfit-part accessory" id="accessory"></div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <div class="color-pickers">
+                        <div class="color-picker-group">
+                            <label for="top-color">Top</label>
+                            <input type="color" id="top-color" value="#ffffff">
+                        </div>
+                        <div class="color-picker-group">
+                            <label for="bottom-color">Bottom</label>
+                            <input type="color" id="bottom-color" value="#ffffff">
+                        </div>
+                        <div class="color-picker-group">
+                            <label for="shoes-color">Shoes</label>
+                            <input type="color" id="shoes-color" value="#ffffff">
+                        </div>
+                        <div class="color-picker-group">
+                            <label for="accessory-color">Accessory</label>
+                            <input type="color" id="accessory-color" value="#ffffff">
+                        </div>
+                    </div>
+
+                    <div class="color-combinations">
+                        <h3>Suggested Color Combinations</h3>
+                        <div id="color-combinations-grid" class="color-combinations-grid">
+                            <!-- Color combinations will be dynamically inserted here -->
+                        </div>
+                    </div>
+
+                    <div class="description-section">
+                        <label for="outfit-description">Describe your look</label>
+                        <textarea id="outfit-description" placeholder="Describe your outfit (e.g., 'casual summer beach look')"></textarea>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="get-recommendations" class="btn btn-primary">Get Recommendations</button>
+                        <button id="save-look" class="btn btn-secondary">Save Look</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Looks Section -->
+        <section id="saved" class="section">
+            <div class="saved-looks">
+                <h2>My Saved Looks</h2>
+                <div id="saved-looks-grid" class="saved-looks-grid">
+                    <!-- Saved looks will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recommendations Modal -->
+    <div id="recommendations-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Outfit Recommendations</h2>
+            <div id="recommendations-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
